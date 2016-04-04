@@ -5,7 +5,7 @@ import java.util
 import android.app.Activity
 import android.content.{Context, Intent}
 import android.os.Bundle
-import android.view.View
+import android.view.{LayoutInflater, ViewGroup, View}
 import android.view.View.OnClickListener
 import android.widget.AdapterView.OnItemClickListener
 import android.widget._
@@ -13,6 +13,26 @@ import com.swimr.ScalaTestAndroid.scala_android_1.app.R
 
 class TestArrayAdapter(context: Context, textViewResourceId: Int, objects: util.List[String])
 		extends ArrayAdapter[String](context, textViewResourceId, objects) {
+
+
+	override def getView(position:Int, convertView:View, parent:ViewGroup):View = {
+
+		// ref: http://sudhagar.com/posts/arrayadapter---get-it-right!
+
+		val inflater = getContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE).asInstanceOf[LayoutInflater]
+		val rowView = inflater.inflate(textViewResourceId,parent,false).asInstanceOf[View]
+		val lineOne = rowView.findViewById(R.id.list_item_firstLine).asInstanceOf[TextView]
+		val lineTwo = rowView.findViewById(R.id.list_item_secondLine).asInstanceOf[TextView]
+
+		val thisObject = objects.get(position).asInstanceOf[String]
+		lineOne.setText(thisObject)
+		lineTwo.setText(thisObject)
+
+		rowView
+
+	}
+
+
 
 }
 
@@ -61,7 +81,8 @@ class MainScalaActivity extends Activity {
 		val listview = findViewById(R.id.listView_mainActivity).asInstanceOf[ListView]
 		import scala.collection.JavaConversions._
 		val listItems = List[String]("hello","goodbye")
-		val adapter = new TestArrayAdapter(this, android.R.layout.simple_list_item_1, listItems)
+//		val adapter = new TestArrayAdapter(this, android.R.layout.simple_list_item_1, listItems)
+		val adapter = new TestArrayAdapter(this, R.layout.list_item_1, listItems)
 		listview.setAdapter(adapter)
 		listview.setOnItemClickListener(new OnItemClickListener {
 			override def onItemClick(parent: AdapterView[_], view: View, position: Int, id: Long) = {
