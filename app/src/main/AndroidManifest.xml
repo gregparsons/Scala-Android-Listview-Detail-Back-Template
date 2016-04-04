@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.swimr.ScalaTestAndroid.scala_android_1.app" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name" >
+
+        <!--
+        Replace this:
+
+        android:name=".MainActivity"
+
+        with the following to use the new Scala Activity...
+        -->
+        <activity
+            android:name="com.swimr.ScalaTestAndroid.MainScalaActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.swimr.ScalaTestAndroid.Activity2" />
+        <activity
+            android:name="com.swimr.ScalaTestAndroid.Activity3"
+            android:label="@string/title_activity_3"
+            android:parentActivityName="com.swimr.ScalaTestAndroid.MainScalaActivity" >
+			<!--
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.swimr.ScalaTestAndroid.MainScalaActivity" />
+            -->
+        </activity>
+    </application>
+
+</manifest>
