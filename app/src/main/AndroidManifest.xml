@@ -15,7 +15,7 @@
         with the following to use the new Scala Activity...
         -->
         <activity
-            android:name="com.swimr.ScalaTestAndroid.MainScalaActivity"
+            android:name="com.swimr.ScalaTestAndroid.MainActivityScala"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,9 +25,9 @@
         </activity>
         <activity android:name="com.swimr.ScalaTestAndroid.Activity2" />
         <activity
-            android:name="com.swimr.ScalaTestAndroid.Activity3"
+            android:name="com.swimr.ScalaTestAndroid.DetailViewActivity"
             android:label="@string/title_activity_3"
-            android:parentActivityName="com.swimr.ScalaTestAndroid.MainScalaActivity" >
+            android:parentActivityName="com.swimr.ScalaTestAndroid.MainActivityScala" >
 			<!--
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

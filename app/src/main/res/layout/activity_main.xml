@@ -23,13 +23,13 @@
 			android:layout_below="@+id/myTextview" android:layout_alignParentStart="true"/>
 	<EditText
 			android:id="@+id/textViewToActivity3"
-			android:layout_width="wrap_content"
+			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:textAppearance="?android:attr/textAppearanceLarge"
-			android:layout_alignParentEnd="true" android:layout_alignTop="@+id/button_activity3"
-			android:layout_toEndOf="@+id/myTextview"
 			android:editable="true"
-			android:layout_alignBottom="@+id/button_activity3" android:background="#a4a4a4" android:text="Hello from main"/>
+			android:background="#a4a4a4" android:text="Hello from main" android:layout_below="@+id/myTextview"
+			android:layout_alignParentEnd="true" android:layout_alignBottom="@+id/button_activity3"
+			android:layout_toEndOf="@+id/myTextview"/>
 	<ListView
 			android:id="@+id/listView_mainActivity"
 			android:layout_width="wrap_content"
